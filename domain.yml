@@ -1,0 +1,80 @@
+intents:
+  - saludo
+  - peticion
+  - despedida
+  - SentimientosNecesidadSatisfecha
+  - Necesidades
+  - SentimientosNecesidadNoSatisfecha
+  - evaluacionesOcultas
+
+entities:
+  - SentimientoNecesidadSatisfecha
+  - Necesidades_Humanas
+  - SentimientoNecesidadNoSatisfecha
+  - evaluacionOculta
+
+slots:
+  SentimientoNecesidadSatisfecha:
+    type: text
+  Necesidades_Humanas:
+    type: text
+  SentimientoNecesidadNoSatisfecha:
+    type: text
+  evaluacionOculta:
+    type: text
+
+responses:
+  utter_saludo:
+  - text: "Hola, Soy Jirafín, te propongo dar un paseo por tus sentimientos y necesidades. A lo mejor puede servirte para aprender,
+          o encontrar claridad. Esto lo aprendí de una herramienta de desarrollo personal que se llama Comunicación No Violenta
+          (CNV). Cuéntame, ¿cómo te encuentras hoy?"
+
+  utter_your_Satisfecha:
+  - text: "Entiendo como te sientes"
+
+  utter_your_NoSatisfecha:
+  - text: "Vaya...te entiendo cuando me dices que estás así"
+
+  utter_your_paso_necesidades:
+  - text: "¿Qué tal si identificamos tus necesidades?"
+
+  utter_conocer_CNV:
+  - text: "Si no estás familiarizado con el proceso CNV, échale un ojo a esta imagen: 
+          https://www.entendiendonos.com/wp-content/uploads/2021/04/Listado-sentimientos-y-necesidades.pdf"
+
+  utter_necesidad2:
+  - text: "¿Qué necesidad dirías que reconoces?"
+
+  utter_necesidad:
+  - text: "Vaya, la necesidad de {Necesidades_Humanas} me parece muy interesante. "
+
+  utter_peticiones:
+  - text: "Las necesidades son el origen de los sentimientos y las cuidamos con estrategias. Éstas estrategias se reflejan en peticiones."
+
+  utter_peticiones2:
+  - text: "En CNV las peticiones deben realizarse en lenguaje positivo y concreto, trata de evitar las palabras 
+          ambiguas para evitar confusiones, si somos claros con lo que necesitamos es más probable que lo encontremos.
+          ¿Qué petición consideras que te podría ayudar? Te recomiendo empezar utilizando: Mi petición es..."
+
+  utter_fin:
+  - text: "Genial, me has contado que te sientes {SentimientoNecesidadSatisfecha} y tienes la necesidad de {Necesidades_Humanas}.
+          Espero que tu petición resuelva lo que estás buscando.
+          Gracias por hablar conmigo y...!Hasta pronto!"
+
+  utter_fin2:
+  - text: "Genial, me has contado que te sientes {SentimientoNecesidadNoSatisfecha} y tienes la necesidad de {Necesidades_Humanas}.
+          Espero que tu petición resuelva lo que estás buscando.
+          Gracias por hablar conmigo y...!Hasta pronto!"
+
+  utter_oculta:
+  - text: "{evaluacionOculta} es una evaluacion oculta, esto son palabras que parecen sentimientos, pero son interpretaciones, 
+          evaluaciones o juicios de las actuaciones mías o de otros.
+          Nos alejan de nuestra responsabilidad." 
+
+  utter_oculta2:
+  - text: "Si no tienes claro como expresarte, te recomiendo que mires esta lista de sentimientos y necesidades 
+          https://www.entendiendonos.com/wp-content/uploads/2021/04/Listado-sentimientos-y-necesidades.pdf"  
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
